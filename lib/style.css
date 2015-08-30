@@ -34,3 +34,33 @@ button {
 button:hover {
   border: 1px solid lightgrey;
 }
+
+#instructions {
+  background: black;
+  text-align: center;
+  display: none;
+  font-family: copperplate;
+  color: yellow;
+  height: 55%;
+  width: 50%;
+  position: absolute;
+  margin: auto;
+  border-radius: 30px;
+  border: 1px solid lightgrey;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#instructions > p {
+  color: white;
+  font-family: tahoma;
+  font-size: 14px;
+}
+
+#instructions > p > img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}

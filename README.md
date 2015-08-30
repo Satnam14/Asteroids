@@ -20,8 +20,10 @@
 - [x] The game adds and displays the Asteroids, ship and the bullets
 - [x] Bind key handlers on W, A, S, D and SPACE so move ship and fire bullets
 - [x] Implement collision mechanics
-- [x] Add images for background, asteroids, ship and explosions
+- [x] Add images for background, asteroids, ship.
 - [ ] Output and keep track of score and high scores
+- [ ] Implement explosion effects
+- [ ] Implement physically correct collisions, with debris.
 
 ## Implementation Timeline
 
