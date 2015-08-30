@@ -74,6 +74,8 @@
 
           $.getJSON('https://raw.githubusercontent.com/Satnam14/Asteroids/master/lib/scores.json', function (data) {
             console.log(data);
+            var scores = JSON.parse(data);
+            console.log(scores);
           }).fail(function( jqxhr, textStatus, error ) {
             var err = textStatus + ", " + error;
             console.log( "Request Failed: " + err );
