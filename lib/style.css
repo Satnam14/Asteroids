@@ -1,5 +1,36 @@
-#game-screen {
-  margin: 0 auto;
+body {
+  background-image: url("../vendor/background.jpg");
+}
+
+#welcome {
+  height: 40%;
+  width: 50%;
+  color: yellow;
+  font-family: chalkduster;
+  font-size: 48px;
+  margin: auto;
   position: absolute;
-  margin-left: 200px;
+  top: 0; left: 0; bottom: 0; right: 0;
+  text-align: center;
+}
+
+#welcome > h1 {
+  margin: 0 auto;
+}
+
+button {
+  border: 1px solid transparent;
+  width: 60%;
+  display: block;
+  background: transparent;
+  font-size: 30px;
+  font-family: copperplate;
+  color: white;
+  padding: 10px 30px 10px 30px;
+  margin: 10 auto;
+
+}
+
+button:hover {
+  border: 1px solid lightgrey;
 }

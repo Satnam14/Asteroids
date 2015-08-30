@@ -1,14 +1,22 @@
 <html>
   <head>
     <title>Asteroids</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="lib/style.css">
   </head>
 
   <body>
+
+    <div id="welcome">
+      <h1>ASTEROIDS</h1>
+      <button type="button" id="btn-play">Play Game</button>
+      <button type="button" id="btn-instructions">Rules and Instructions</button>
+      <button type="button" id="btn-scores">High Scores</button>
+    </div>
     <canvas id="game-screen"></canvas>
 
+    <script type="application/javascript" src="vendor/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="vendor/keymaster.js"></script>
-
+    <!-- <script type="application/javascript" src="lib/dashboard.js"></script> -->
     <script type="application/javascript" src="lib/util.js"></script>
     <script type="application/javascript" src="lib/movingObject.js"></script>
     <script type="application/javascript" src="lib/asteroid.js"></script>
@@ -18,16 +26,26 @@
     <script type="application/javascript" src="lib/gameView.js"></script>
 
     <script type="application/javascript">
-      (function () {
-        var canvasEl = document.getElementsByTagName("canvas")[0];
-        canvasEl.width = Asteroids.Game.DIM_X;
-        canvasEl.height = Asteroids.Game.DIM_Y;
+      $(document).ready(function() {
 
-        var ctx = canvasEl.getContext("2d");
-        var game = new Asteroids.Game(ctx);
-        new Asteroids.GameView(game, ctx).start();
+        (function () {
+          var canvasEl = document.getElementsByTagName("canvas")[0];
+          canvasEl.width = Asteroids.Game.DIM_X;
+          canvasEl.height = Asteroids.Game.DIM_Y;
+          var ctx = canvasEl.getContext("2d");
+          var game = new Asteroids.Game(ctx);
+          var start = new Asteroids.GameView(game, ctx);
+          start.start();
 
-      })();
+          $("#btn-play").click(function () {
+            $('#welcome').hide();
+            start.addShipToView();
+            game.drawDashboard(ctx);
+          });
+
+        })();
+
+      });
     </script>
   </body>
 </html>
