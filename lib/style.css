@@ -64,3 +64,58 @@ button:hover {
   margin: 0 auto;
   padding: 20px;
 }
+
+#high-scores {
+  display: none;
+  background: black;
+  text-align: center;
+  font-family: copperplate;
+  color: yellow;
+  height: 80%;
+  width: 50%;
+  position: absolute;
+  margin: auto;
+  border-radius: 30px;
+  border: 1px solid lightgrey;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#scores-list {
+}
+
+#scores-list > li {
+  text-align: justify;
+  line-height: 2px;
+  margin: auto;
+  width: 50%;
+  border-bottom: 1px solid yellow;
+}
+
+.player-name {
+  display: inline-block;
+}
+
+.player-score {
+  display: inline-block;
+  float: right;
+}
+
+#game-over {
+  display: none;
+  background: black;
+  text-align: center;
+  font-family: copperplate;
+  color: yellow;
+  height: 40%;
+  width: 50%;
+  position: absolute;
+  margin: auto;
+  border-radius: 30px;
+  border: 1px solid lightgrey;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#game-over > h1 {
+  margin-top: 50px;
+  font-size: 56px;
+}

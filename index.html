@@ -6,6 +6,8 @@
     <script type="application/javascript" src="vendor/jquery-2.1.4.min.js"></script>
     <script type="application/javascript" src="vendor/keymaster.js"></script>
     <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/score.js"></script>
+    <script type="application/javascript" src="lib/binaryHeap.js"></script>
     <script type="application/javascript" src="lib/movingObject.js"></script>
     <script type="application/javascript" src="lib/asteroid.js"></script>
     <script type="application/javascript" src="lib/ship.js"></script>
@@ -21,7 +23,7 @@
       <h1>ASTEROIDS</h1>
       <button type="button" id="btn-play">Play Game</button>
       <button type="button" id="btn-instructions">Rules and Instructions</button>
-      <button type="button" id="btn-scores">High Scores</button>
+      <button type="button" id="btn-scores">Highest Scores</button>
     </div>
 
     <div id="instructions">
@@ -46,16 +48,15 @@
     </div>
 
     <div id="high-scores">
-      <script type="text/javascript">
-        var scores = $.getJSON('https://github.com/Satnam14/Asteroids/blob/master/lib/scores.json', function () {
-          debugger
-          console.log(scores);
-        });
-      </script>
+      <ol id="scores-list">
+        <h1>HIGHEST SCORES</h1>
+      </ol>
+      <button type="button" class="back">BACK</button>
+    </div>
 
-      <ul id="scores-list">
-
-      </ul>
+    <div id="game-over">
+      <h1>GAME OVER</h1>
+      <button type="button" id="restart-game">Restart</button>
     </div>
 
     <canvas id="game-screen"></canvas>
@@ -72,11 +73,20 @@
           var start = new Asteroids.GameView(game, ctx);
           start.start();
 
-          $.getJSON('https://raw.githubusercontent.com/Satnam14/Asteroids/master/lib/scores.json', function (data) {
-            console.log(data);
-            var scores = JSON.parse(data);
-            console.log(scores);
-          }).fail(function( jqxhr, textStatus, error ) {
+          $.getJSON('https://raw.githubusercontent.com/Satnam14/Asteroids/master/lib/scores.json')
+          .done(function(data) {
+            for (var name in data) {
+              var $list = $('<li></li>');
+              var $name = $('<h5></h5>');
+              var $score = $('<h5></h5>');
+              $name.text(name).addClass('player-name');
+              $score.text(data[name]).addClass('player-score');
+              $list.append($name);
+              $list.append($score);
+              $('#scores-list').append($list);
+            }
+          })
+          .fail(function( jqxhr, textStatus, error ) {
             var err = textStatus + ", " + error;
             console.log( "Request Failed: " + err );
           });
@@ -92,9 +102,19 @@
             $('#instructions').show();
           });
 
+          $('#btn-scores').click(function () {
+            $('#welcome').hide();
+            $('#high-scores').show();
+          });
+
           $('.back').click(function () {
+            $('#high-scores').hide();
             $('#instructions').hide();
             $('#welcome').show();
+          });
+
+          $('#restart-game').click(function () {
+            location.reload();
           });
 
         })();
