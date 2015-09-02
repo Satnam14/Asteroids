@@ -2,7 +2,7 @@
 
 [Live][link]
 
-[link]: https://satnam14.github.io
+[link]: https://satnam14.github.io/asteroids
 
 - [x] Basic skeleton canvas that renders at 32 FPS
 - [x] Utility functions for -
@@ -16,6 +16,7 @@
 - [x] Implement collision mechanics
 - [x] Add images for background, asteroids, ship
 - [ ] Implement client side game restart
+- [ ] Allow user to control ship using arrow keys
 - [x] Output and keep track of score and high scores
 - [ ] Using Heap, allow users to add record scores
 - [ ] Implement explosion effects
