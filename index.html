@@ -73,7 +73,7 @@
           var start = new Asteroids.GameView(game, ctx);
           start.start();
 
-          $.getJSON('https://raw.githubusercontent.com/Satnam14/Asteroids/master/lib/scores.json')
+          $.getJSON('https://raw.githubusercontent.com/Satnam14/Asteroids/gh-pages/lib/scores.json')
           .done(function(data) {
             for (var name in data) {
               var $list = $('<li></li>');
