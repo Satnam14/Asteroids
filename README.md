@@ -2,7 +2,7 @@
 
 [Live][link]
 
-[link]: https://satnam14.github.io/asteroids
+[link]: https://satnam14.github.io/Asteroids
 
 ![Screenshot](http://res.cloudinary.com/satnam14/image/upload/v1441733890/aster_av5yfp.png)
 
